@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>kusokorajs</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.4.1/fabric.min.js"></script>
+    <script src="./kusokora.js"></script>
+</head>
+<style type="text/css">
+    canvas {
+        border: solid 3px #000;
+    }
+    </style>
+<body>
+    <canvas id="c" width="500" height="500"></canvas>
+    <input type="text" id="imageUrl">
+    <input type="button" id="addImage">
+</body>
+<script>
+
+// create a wrapper around native canvas element (with id="c")
+var canvas = new fabric.Canvas('c');
+document.getElementById("addImage").addEventListener('click', function() {
+    url = document.getElementById("imageUrl").value;
+    addImage(canvas,url);
+}, false);
+</script>
+</html>
